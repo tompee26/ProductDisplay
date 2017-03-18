@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MercariSample</string>
+    <string name="default_content_description">Content Description</string>
+
+    <!-- Fragment titles -->
+    <string name="fragment_title_men">Men</string>
+    <string name="fragment_title_women">Women</string>
+    <string name="fragment_title_all">All</string>
+</resources>
