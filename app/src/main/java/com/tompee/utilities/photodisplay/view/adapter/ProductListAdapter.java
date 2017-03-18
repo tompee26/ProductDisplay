@@ -46,8 +46,10 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
         holder.getLike().setText(String.valueOf(product.getLikeCount()));
         holder.getComment().setText(String.valueOf(product.getCommentCount()));
         NumberFormat format = NumberFormat.getCurrencyInstance(Locale.US);
+        format.setMaximumFractionDigits(0);
+        format.setMinimumFractionDigits(0);
         holder.getPrice().setText(format.format(product.getPrice()));
-        /* Picasso protocol redirect issue */
+        /** Picasso protocol redirect issue */
         Picasso.with(mContext).load(product.getPhotoUrl().replace("http://", "https://")).
                 into(holder.getImageView());
     }
@@ -57,7 +59,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
         return mProducts.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    static class ViewHolder extends RecyclerView.ViewHolder {
         private final ImageView mImageView;
         private final ImageView mBanner;
         private final TextView mName;
@@ -65,7 +67,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
         private final TextView mComment;
         private final TextView mLike;
 
-        public ViewHolder(View itemView) {
+        ViewHolder(View itemView) {
             super(itemView);
             mImageView = (ImageView) itemView.findViewById(R.id.product_image);
             mBanner = (ImageView) itemView.findViewById(R.id.sold_out_banner);
@@ -75,27 +77,27 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
             mLike = (TextView) itemView.findViewById(R.id.like);
         }
 
-        public ImageView getImageView() {
+        ImageView getImageView() {
             return mImageView;
         }
 
-        public ImageView getBanner() {
+        ImageView getBanner() {
             return mBanner;
         }
 
-        public TextView getName() {
+        TextView getName() {
             return mName;
         }
 
-        public TextView getComment() {
+        TextView getComment() {
             return mComment;
         }
 
-        public TextView getLike() {
+        TextView getLike() {
             return mLike;
         }
 
-        public TextView getPrice() {
+        TextView getPrice() {
             return mPrice;
         }
     }

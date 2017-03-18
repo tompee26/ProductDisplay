@@ -6,4 +6,6 @@
     <string name="fragment_title_men">Men</string>
     <string name="fragment_title_women">Women</string>
     <string name="fragment_title_all">All</string>
+
+    <string name="button_sell">Sell</string>
 </resources>

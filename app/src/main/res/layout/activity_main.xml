@@ -22,19 +22,51 @@
             app:tabGravity="fill"
             app:tabMaxWidth="0dp" />
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorAccent" />
+
         <android.support.v4.view.ViewPager
             android:id="@+id/pager_main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-
     </LinearLayout>
 
-    <android.support.design.widget.FloatingActionButton
+    <FrameLayout
         android:layout_width="@dimen/floating_button_dimension"
         android:layout_height="@dimen/floating_button_dimension"
         android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/floating_button_margin"
-        android:src="@drawable/ic_camera"
-        app:backgroundTint="@color/colorAccent" />
+        android:layout_margin="@dimen/floating_button_margin">
 
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            app:backgroundTint="@color/colorAccent"
+            app:elevation="0dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/button_sell"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/light_text" />
+
+            <ImageView
+                android:layout_width="@dimen/floating_button_icon_dimension"
+                android:layout_height="@dimen/floating_button_icon_dimension"
+                android:background="@drawable/ic_camera"
+                android:contentDescription="@string/default_content_description" />
+
+        </LinearLayout>
+
+    </FrameLayout>
 </FrameLayout>
