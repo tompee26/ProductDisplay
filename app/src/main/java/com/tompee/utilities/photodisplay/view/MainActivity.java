@@ -1,4 +1,4 @@
-package com.tompee.utilities.mercarisample.view;
+package com.tompee.utilities.photodisplay.view;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -6,8 +6,8 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.widget.TextView;
 
-import com.tompee.utilities.mercarisample.R;
-import com.tompee.utilities.mercarisample.view.adapter.ViewPagerAdapter;
+import com.tompee.utilities.photodisplay.R;
+import com.tompee.utilities.photodisplay.view.adapter.ViewPagerAdapter;
 
 public class MainActivity extends FragmentActivity {
     private ViewPager mViewPager;

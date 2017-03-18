@@ -1,4 +1,4 @@
-package com.tompee.utilities.mercarisample.model;
+package com.tompee.utilities.photodisplay.model;
 
 public class Product {
     private final String mId;

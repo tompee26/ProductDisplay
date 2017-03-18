@@ -1,4 +1,4 @@
-package com.tompee.utilities.mercarisample;
+package com.tompee.utilities.photodisplay;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.tompee.utilities.mercarisample.view.custom;
+package com.tompee.utilities.photodisplay.view.custom;
 
 import android.content.Context;
 import android.util.AttributeSet;

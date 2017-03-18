@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.tompee.utilities.mercarisample.view.custom.SquaredImageView
+            <com.tompee.utilities.photodisplay.view.custom.SquaredImageView
                 android:id="@+id/product_image"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

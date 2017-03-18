@@ -1,12 +1,12 @@
-package com.tompee.utilities.mercarisample.view.adapter;
+package com.tompee.utilities.photodisplay.view.adapter;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.tompee.utilities.mercarisample.R;
-import com.tompee.utilities.mercarisample.view.fragment.ProductFragment;
+import com.tompee.utilities.photodisplay.R;
+import com.tompee.utilities.photodisplay.view.fragment.ProductFragment;
 
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     private static final int PAGE_COUNT = 3;

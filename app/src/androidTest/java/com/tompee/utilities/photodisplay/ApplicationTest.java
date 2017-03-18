@@ -1,4 +1,4 @@
-package com.tompee.utilities.mercarisample;
+package com.tompee.utilities.photodisplay;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

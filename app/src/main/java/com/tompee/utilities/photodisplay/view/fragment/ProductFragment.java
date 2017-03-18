@@ -1,4 +1,4 @@
-package com.tompee.utilities.mercarisample.view.fragment;
+package com.tompee.utilities.photodisplay.view.fragment;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -10,10 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.tompee.utilities.mercarisample.R;
-import com.tompee.utilities.mercarisample.controller.task.GetProductFromListTask;
-import com.tompee.utilities.mercarisample.model.Product;
-import com.tompee.utilities.mercarisample.view.adapter.ProductListAdapter;
+import com.tompee.utilities.photodisplay.R;
+import com.tompee.utilities.photodisplay.controller.task.GetProductFromListTask;
+import com.tompee.utilities.photodisplay.model.Product;
+import com.tompee.utilities.photodisplay.view.adapter.ProductListAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

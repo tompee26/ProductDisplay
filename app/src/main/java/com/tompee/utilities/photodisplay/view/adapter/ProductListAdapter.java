@@ -1,4 +1,4 @@
-package com.tompee.utilities.mercarisample.view.adapter;
+package com.tompee.utilities.photodisplay.view.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -9,8 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
-import com.tompee.utilities.mercarisample.R;
-import com.tompee.utilities.mercarisample.model.Product;
+import com.tompee.utilities.photodisplay.R;
+import com.tompee.utilities.photodisplay.model.Product;
 
 import java.text.NumberFormat;
 import java.util.List;
@@ -47,7 +47,9 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
         holder.getComment().setText(String.valueOf(product.getCommentCount()));
         NumberFormat format = NumberFormat.getCurrencyInstance(Locale.US);
         holder.getPrice().setText(format.format(product.getPrice()));
-        Picasso.with(mContext).load(product.getPhotoUrl()).into(holder.getImageView());
+        /* Picasso protocol redirect issue */
+        Picasso.with(mContext).load(product.getPhotoUrl().replace("http://", "https://")).
+                into(holder.getImageView());
     }
 
     @Override

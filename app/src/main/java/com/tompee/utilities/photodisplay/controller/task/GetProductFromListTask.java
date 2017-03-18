@@ -1,11 +1,11 @@
-package com.tompee.utilities.mercarisample.controller.task;
+package com.tompee.utilities.photodisplay.controller.task;
 
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.tompee.utilities.mercarisample.controller.utilities.AssetUtility;
-import com.tompee.utilities.mercarisample.model.Product;
+import com.tompee.utilities.photodisplay.controller.utilities.AssetUtility;
+import com.tompee.utilities.photodisplay.model.Product;
 
 import org.json.JSONArray;
 import org.json.JSONException;

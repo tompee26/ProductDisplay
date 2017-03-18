@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MercariSample</string>
+    <string name="app_name">Mercari</string>
     <string name="default_content_description">Content Description</string>
 
     <!-- Fragment titles -->

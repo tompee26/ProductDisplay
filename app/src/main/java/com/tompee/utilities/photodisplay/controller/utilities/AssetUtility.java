@@ -1,4 +1,4 @@
-package com.tompee.utilities.mercarisample.controller.utilities;
+package com.tompee.utilities.photodisplay.controller.utilities;
 
 import android.content.Context;
 
