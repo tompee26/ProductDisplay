@@ -21,5 +21,6 @@
     <dimen name="product_list_banner_height">60dp</dimen>
     <dimen name="product_list_icon_margin">4dp</dimen>
     <dimen name="product_list_icon_dimension">20dp</dimen>
+    <dimen name="product_list_text_margin">6dp</dimen>
 
 </resources>
