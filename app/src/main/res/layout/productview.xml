@@ -1,7 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/product_list_margin"
+    android:orientation="vertical"
+    app:cardCornerRadius="0dp">
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.tompee.utilities.mercarisample.view.custom.SquaredImageView
+                android:id="@+id/product_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/default_content_description"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:id="@+id/sold_out_banner"
+                android:layout_width="@dimen/product_list_banner_width"
+                android:layout_height="@dimen/product_list_banner_height"
+                android:background="@drawable/badge_soldout"
+                android:contentDescription="@string/default_content_description" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|start"
+                android:padding="@dimen/activity_vertical_margin"
+                android:textAppearance="?android:attr/textAppearanceListItem"
+                android:textColor="@color/light_text" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/product_list_icon_dimension"
+                android:layout_height="@dimen/product_list_icon_dimension"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="@dimen/product_list_icon_margin"
+                android:background="@drawable/icon_like"
+                android:contentDescription="@string/default_content_description" />
+
+            <TextView
+                android:id="@+id/like"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <ImageView
+                android:layout_width="@dimen/product_list_icon_dimension"
+                android:layout_height="@dimen/product_list_icon_dimension"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="@dimen/product_list_icon_margin"
+                android:background="@drawable/icon_comment"
+                android:contentDescription="@string/default_content_description" />
+
+            <TextView
+                android:id="@+id/comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="@dimen/product_list_icon_margin"
+                android:gravity="end"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
