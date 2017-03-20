@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.tompee.utilities.photodisplay.R;
+import com.tompee.utilities.photodisplay.controller.listener.EndlessRecyclerViewScrollListener;
 import com.tompee.utilities.photodisplay.controller.task.GetProductFromListTask;
 import com.tompee.utilities.photodisplay.model.Product;
 import com.tompee.utilities.photodisplay.view.adapter.ProductListAdapter;
@@ -28,6 +29,7 @@ public class ProductFragment extends Fragment implements
 
     private List<Product> mProductList;
     private ProductListAdapter mAdapter;
+    private GetProductFromListTask mFetchTask;
 
     public static ProductFragment newInstance(String type) {
         ProductFragment fragment = new ProductFragment();
@@ -57,11 +59,23 @@ public class ProductFragment extends Fragment implements
         layoutManager.setGapStrategy(StaggeredGridLayoutManager.GAP_HANDLING_NONE);
         recyclerView.setLayoutManager(layoutManager);
 
-        /** Create task for fetching */
-        GetProductFromListTask fetchTask = new GetProductFromListTask(getContext(),
-                getArguments().getString(VARIANT), this);
-        fetchTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        EndlessRecyclerViewScrollListener scrollListener = new EndlessRecyclerViewScrollListener(layoutManager) {
+            @Override
+            public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
+                getProductList(mProductList.size());
+            }
+        };
+        recyclerView.addOnScrollListener(scrollListener);
+        getProductList(0);
         return view;
+    }
+
+    private void getProductList(int start) {
+        if (mFetchTask == null) {
+            mFetchTask = new GetProductFromListTask(getContext(),
+                    getArguments().getString(VARIANT), start, this);
+            mFetchTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        }
     }
 
     @Override
@@ -74,10 +88,12 @@ public class ProductFragment extends Fragment implements
     @Override
     public void onFinished() {
         Log.d(TAG, "Fetch task finished");
+        mFetchTask = null;
     }
 
     @Override
     public void onError() {
         Log.e(TAG, "Fetch task error");
+        mFetchTask = null;
     }
 }

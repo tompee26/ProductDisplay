@@ -13,6 +13,7 @@ import org.json.JSONObject;
 
 public class GetProductFromListTask extends AsyncTask<Void, Product, Boolean> {
     private static final String TAG = "GetProductFromListTask";
+    private static final int MAX_ITEM_PER_FETCH = 10;
     private static final String TAG_DATA = "data";
     private static final String TAG_ID = "id";
     private static final String TAG_NAME = "name";
@@ -24,13 +25,15 @@ public class GetProductFromListTask extends AsyncTask<Void, Product, Boolean> {
     private static final String ON_SALE = "on_sale";
     private final Context mContext;
     private final String mFilename;
+    private final int mStart;
     private final GetProductFromListTaskListener mListener;
 
-    public GetProductFromListTask(Context context, String filename,
+    public GetProductFromListTask(Context context, String filename, int start,
                                   GetProductFromListTaskListener listener) {
         mContext = context;
         mFilename = filename;
         mListener = listener;
+        mStart = start;
     }
 
     @Override
@@ -41,7 +44,8 @@ public class GetProductFromListTask extends AsyncTask<Void, Product, Boolean> {
         try {
             if (object != null) {
                 JSONArray array = object.getJSONArray(TAG_DATA);
-                for (int count = 0; count < array.length(); count++) {
+                for (int count = mStart; count < array.length() &&
+                        count < mStart + MAX_ITEM_PER_FETCH; count++) {
                     JSONObject productObject = array.getJSONObject(count);
                     String id = productObject.getString(TAG_ID);
                     String name = productObject.getString(TAG_NAME);
@@ -51,6 +55,7 @@ public class GetProductFromListTask extends AsyncTask<Void, Product, Boolean> {
                     int price = productObject.getInt(TAG_PRICE);
                     String photo = productObject.getString(TAG_PHOTO);
                     publishProgress(new Product(id, name, status, like, comments, price, photo));
+                    Log.d(TAG, "count: " + count);
                 }
             }
         } catch (JSONException e) {

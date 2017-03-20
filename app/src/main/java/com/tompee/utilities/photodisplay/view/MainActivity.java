@@ -1,5 +1,6 @@
 package com.tompee.utilities.photodisplay.view;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentActivity;
@@ -14,6 +15,7 @@ public class MainActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_main);
         TextView toolbar = (TextView) findViewById(R.id.toolbar_text);
         toolbar.setText(R.string.app_name);
